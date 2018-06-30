@@ -35,9 +35,9 @@ public class espresspTest {
         onView(withId(R.id.address)).perform(typeText("133North street A12Jh3"),closeSoftKeyboard());
         Thread.sleep(500);
         onView(withId(R.id.submitButton)).perform(click());
-        //onData(anything()).inAdapterView(withId(R.id.listView)).atPosition(0).perform(click());
-       // Thread.sleep(500);
-       // onView(withId(R.id.deleteButton)).perform(click());
+        onData(anything()).inAdapterView(withId(R.id.listView)).atPosition(0).perform(click());
+        Thread.sleep(500);
+        onView(withId(R.id.deleteButton)).perform(click());
         }
 
 }
