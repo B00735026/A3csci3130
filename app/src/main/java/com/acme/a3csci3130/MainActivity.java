@@ -7,9 +7,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import com.google.firebase.database.FirebaseDatabase;
+
 
 import com.firebase.ui.database.FirebaseListAdapter;
-import com.google.firebase.database.FirebaseDatabase;
+
 
 public class MainActivity extends Activity {
 
@@ -47,6 +49,7 @@ public class MainActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Contact person = (Contact) firebaseAdapter.getItem(position);
+
                 showDetailView(person);
             }
         });
@@ -62,6 +65,7 @@ public class MainActivity extends Activity {
     {
         Intent intent = new Intent(this, DetailViewActivity.class);
         intent.putExtra("Contact", person);
+
         startActivity(intent);
     }
 
